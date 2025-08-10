@@ -62,7 +62,7 @@ function typeEffect() {
 }
 typeEffect();
 
-// Controle do áudio com botão para tocar trecho específico
+// Controle do áudio com botão para tocar trecho específico em loop
 const audio = document.getElementById('birthdaySong');
 const playBtn = document.getElementById('playBtn');
 
@@ -71,14 +71,16 @@ playBtn.addEventListener('click', () => {
   audio.play().catch(() => {
     console.log('Erro ao tentar reproduzir o áudio.');
   });
-  playBtn.style.display = 'none'; // esconde o botão depois de tocar
-  document.getElementById('audio-control').innerHTML = '<p>🎶 Música tocando, aproveite! 🎶</p>';
+  playBtn.style.display = 'none';
+  document.getElementById('audio-control').innerHTML = '<p>🎶 Música tocando em loop, aproveite! 🎶</p>';
 });
 
 audio.addEventListener('timeupdate', () => {
-  if (audio.currentTime >= 75) { // para de tocar aos 75 segundos (1:15)
-    audio.pause();
+  if (audio.currentTime >= 75) { // quando chegar no fim do trecho
+    audio.currentTime = 30; // volta para o começo do trecho
+    audio.play();
   }
 });
+
 
 
