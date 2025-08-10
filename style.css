@@ -1,0 +1,109 @@
+/* Reset e fonte */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffe4ec;
+  overflow-x: hidden;
+  color: #a63a52;
+}
+
+#heartsCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 20px;
+  color: #ff4d6d;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1.1rem;
+  font-style: italic;
+  min-height: 28px;
+}
+
+/* Galeria */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.photo-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.photo-card:hover,
+.photo-card:focus {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  background-color: #fff0f5;
+  color: #a63a52;
+  user-select: none;
+}
+
+/* Mensagem final */
+.final-message {
+  max-width: 800px;
+  margin: 40px auto 60px;
+  padding: 20px;
+  background: #fff0f5;
+  border-radius: 12px;
+  text-align: center;
+  color: #a63a52;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  header p {
+    font-size: 1rem;
+    min-height: auto;
+  }
+  .caption {
+    font-size: 0.9rem;
+  }
+  .final-message {
+    font-size: 1rem;
+    margin: 20px 15px 40px;
+    padding: 15px;
+  }
+}
