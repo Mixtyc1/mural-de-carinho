@@ -76,11 +76,16 @@ playBtn.addEventListener('click', () => {
 });
 
 audio.addEventListener('timeupdate', () => {
-  if (audio.currentTime >= 75) { // quando chegar no fim do trecho
-    audio.currentTime = 30; // volta para o começo do trecho
-    audio.play();
+  if (audio.currentTime >= 130) { // fim do trecho ajustado pra 2min10s
+    audio.pause();
+    setTimeout(() => {
+      audio.currentTime = 30;
+      audio.play();
+    }, 50); // pausa 50ms antes de reiniciar para suavizar o loop
   }
 });
+
+
 
 
 
